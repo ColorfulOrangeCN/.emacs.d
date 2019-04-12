@@ -12,7 +12,7 @@
 
 (defvar iconfig/packages '())
 
-(defun require-package(pkg)
+(defun iconfig/try-to-install-package(pkg)
   (when (not (package-installed-p pkg))
     (when (= iconfig/package-refreshed 0)
       (package-refresh-contents)
@@ -21,6 +21,10 @@
     (package-install pkg)
     )
   (add-to-list 'iconfig/packages pkg)
+  )
+
+(defun require-package(pkg)
+  (iconfig/try-to-install-package pkg)
   (require pkg)
   )
 
