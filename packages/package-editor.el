@@ -4,6 +4,9 @@
 (setq make-backup-files nil)
 (global-linum-mode t)
 
+;; set indent
+(setq c-default-style "k&r")
+(setq c-basic-offset 4)
 ;; config highlight
 (require-package 'highlight-parentheses)
 (define-globalized-minor-mode global-highlight-parentheses-mode
@@ -17,13 +20,6 @@
   (interactive)
   (goto-char (point-min))
   (while (search-forward "\r" nil t) (replace-match "")))
-
-;; config ace-jump-mode
-(require-package 'ace-jump-mode)
-(global-set-key (kbd "M-g M-a") 'ace-jump-mode)
-
-;; config imenu
-(global-set-key (kbd "M-g M-i") 'imenu)
 
 ;; open parens
 (electric-pair-mode t)

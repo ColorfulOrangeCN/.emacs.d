@@ -1,0 +1,5 @@
+(require-package 'company)
+(global-company-mode t)
+(require-package 'flycheck)
+(global-flycheck-mode t)
+(provide 'package-completion)
