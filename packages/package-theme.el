@@ -1,5 +1,8 @@
 (require-package 'monokai-theme)
 (load-theme 'monokai t)
+(require-package 'powerline)
+(powerline-default-theme)
+
 (set-default-font "Source Code Pro 11")
 
 (tool-bar-mode 0)

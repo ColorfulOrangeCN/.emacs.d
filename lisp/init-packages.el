@@ -16,7 +16,7 @@
   (when (not (package-installed-p pkg))
     (when (= iconfig/package-refreshed 0)
       (package-refresh-contents)
-      (setq iconfig/package-refresh 1)
+      (setq iconfig/package-refreshed 1)
       )
     (package-install pkg)
     )

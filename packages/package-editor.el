@@ -14,6 +14,7 @@
   (lambda ()
     (highlight-parentheses-mode t)))
 (global-highlight-parentheses-mode t)
+(setq auto-save-default nil)
 
 (defun iconfig/remove-dos-eol ()
   "Replace DOS eolns CR LF with Unix eolns CR"

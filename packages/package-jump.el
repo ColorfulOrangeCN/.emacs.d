@@ -8,4 +8,9 @@
 ;; ace-windows
 (require-package 'ace-window)
 (global-set-key (kbd "C-x o") 'ace-window)
+
+;; pop-win
+(require-package 'popwin)
+(popwin-mode t)
+
 (provide 'package-jump)
