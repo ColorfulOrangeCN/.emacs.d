@@ -25,4 +25,9 @@
 ;; open parens
 (electric-pair-mode t)
 
+;; open undo-tree
+(require-package 'undo-tree)
+(global-undo-tree-mode)
+(defalias 'ifun/udt 'undo-tree-visualize)
+
 (provide 'package-editor)

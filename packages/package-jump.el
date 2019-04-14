@@ -1,6 +1,6 @@
 ;; config ace-jump-mode
 (require-package 'ace-jump-mode)
-(global-set-key (kbd "M-g M-a") 'ace-jump-mode)
+(global-set-key (kbd "M-g M-g") 'ace-jump-mode)
 
 ;; config imenu
 (global-set-key (kbd "M-g M-i") 'imenu)
