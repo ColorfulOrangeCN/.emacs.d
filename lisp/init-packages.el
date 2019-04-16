@@ -4,8 +4,8 @@
   (require 'package)
   (package-initialize)
   (setq package-archives '(
-			   ("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-                           ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+			   ("gnu" . "http://elpa.emacs-china.org/gnu/")
+                           ("melpa" . "http://elpa.emacs-china.org/melpa/")))
   )
 
 (defvar iconfig/package-refreshed 0)
