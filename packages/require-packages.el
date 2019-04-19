@@ -3,5 +3,5 @@
 (require 'package-command)
 (require 'package-jump)
 (require 'package-completion)
-
+(require 'package-tools)
 (provide 'require-packages)
