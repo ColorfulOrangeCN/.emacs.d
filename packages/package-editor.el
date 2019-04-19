@@ -4,6 +4,7 @@
 (setq make-backup-files nil)
 (global-linum-mode t)
 (setq auto-save-default nil)
+(global-auto-revert-mode 1)
 
 ;; set indent
 (setq c-default-style "k&r")

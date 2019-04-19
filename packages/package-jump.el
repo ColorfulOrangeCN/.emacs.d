@@ -13,4 +13,7 @@
 (require-package 'popwin)
 (popwin-mode t)
 
+;;
+(require-package 'find-file-in-project)
+(global-set-key (kbd "M-p") 'find-file-in-project)
 (provide 'package-jump)
