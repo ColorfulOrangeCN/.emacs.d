@@ -1,4 +1,5 @@
 (require-package 'company)
+(require-package 'company-c-headers)
 (global-company-mode t)
 
 (require-package 'flycheck)
@@ -6,5 +7,6 @@
 
 (require-package 'yasnippet)
 (require-package 'yasnippet-snippets)
+(yas-global-mode 1)
 
 (provide 'package-completion)
