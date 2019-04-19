@@ -1,7 +1,7 @@
-(require 'package-editor)
 (require 'package-theme)
+(require 'package-editor)
 (require 'package-command)
-(require 'package-completion)
 (require 'package-jump)
+(require 'package-completion)
 
 (provide 'require-packages)

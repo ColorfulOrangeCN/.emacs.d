@@ -8,6 +8,25 @@
 
 (require-package 'yasnippet)
 (require-package 'yasnippet-snippets)
-(yas-global-mode 1)
+(yas-minor-mode-on)
+
+(defun ifun/indent-whole-buffer()
+  "indent whole buffer"
+  (indent-region(point-min) (point-max))
+  (message "Indent the whole buffer."))
+
+(defun ifun/indent-region-or-buffer()
+  "indent region or all the buffer"
+  (interactive)
+  (when (region-active-p)
+    (indent-region (region-beginning) (region-end))
+    (message "Indent region.")
+    )
+  (unless (region-active-p)
+    (ifun/indent-whole-buffer)
+    )
+  )
+
+(global-set-key (kbd "M-\\") 'ifun/indent-region-or-buffer)
 
 (provide 'package-completion)
