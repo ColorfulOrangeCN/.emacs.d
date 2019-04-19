@@ -17,6 +17,7 @@
   (lambda ()
     (highlight-parentheses-mode t)))
 (global-highlight-parentheses-mode t)
+(show-paren-mode t)
 
 (defun ifun/remove-dos-eol ()
   "Replace DOS eolns CR LF with Unix eolns CR"
@@ -27,7 +28,6 @@
 ;; open parens
 (require-package 'smartparens)
 (smartparens-global-mode t)
-(electric-pair-mode t)
 
 ;; open undo-tree
 (require-package 'undo-tree)

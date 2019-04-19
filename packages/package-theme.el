@@ -3,7 +3,8 @@
 (require-package 'powerline)
 (powerline-default-theme)
 
-(set-default-font "Source Code Pro 10")
+(unless (eq system-type 'windows-nt)
+  (set-frame-font "Source Code Pro 10"))
 
 (tool-bar-mode 0)
 (menu-bar-mode 0)
