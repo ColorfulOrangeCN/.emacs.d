@@ -3,30 +3,15 @@
 (global-company-mode t)
 (setq company-idle-delay t)
 
+(electric-pair-mode t)
+
 (require-package 'flycheck)
 (global-flycheck-mode t)
 
 (require-package 'yasnippet)
 (require-package 'yasnippet-snippets)
-(yas-minor-mode-on)
-
-(defun ifun/indent-whole-buffer()
-  "indent whole buffer"
-  (indent-region(point-min) (point-max))
-  (message "Indent the whole buffer."))
-
-(defun ifun/indent-region-or-buffer()
-  "indent region or all the buffer"
-  (interactive)
-  (when (region-active-p)
-    (indent-region (region-beginning) (region-end))
-    (message "Indent region.")
-    )
-  (unless (region-active-p)
-    (ifun/indent-whole-buffer)
-    )
-  )
-
-(global-set-key (kbd "M-\\") 'ifun/indent-region-or-buffer)
-
+(add-hook 'prog-mode-hook 'yas-minor-mode)
+;; Python completer & checker
+(require-package 'py-autopep8)
+(add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
 (provide 'package-completion)
