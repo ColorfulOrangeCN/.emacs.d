@@ -1,8 +1,9 @@
-(require-package 'smex)
-
-(smex-initialize)
-
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+(use-package smex
+  :ensure t
+  :config
+  (smex-initialize)
+  :bind
+  (("M-x" . smex) ("M-X" . smex-major-mode-commands))
+  )
 
 (provide 'package-command)

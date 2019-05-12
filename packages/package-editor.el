@@ -11,17 +11,23 @@
 (setq c-basic-offset 4)
 
 ;; config highlight
-(require-package 'highlight-parentheses)
-(define-globalized-minor-mode global-highlight-parentheses-mode
-  highlight-parentheses-mode
-  (lambda ()
-    (highlight-parentheses-mode t)))
-(global-highlight-parentheses-mode t)
-(require-package 'highlight-symbol)
-(add-hook 'prog-mode-hook 'highlight-symbol-mode)
+(use-package highlight-parentheses
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook 'highlight-parentheses-mode))
+(use-package highlight-symbol
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook 'highlight-symbol-mode)
+  )
+
 (show-paren-mode t)
-(require-package 'highlight-numbers)
-(add-hook 'prog-mode-hook 'highlight-numbers-mode)
+
+(use-package highlight-numbers
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook 'highlight-numbers-mode)
+  )
 (require-package 'highlight-indentation)
 
 (defun ifun/remove-dos-eol ()
@@ -31,13 +37,19 @@
   (while (search-forward "\r" nil t) (replace-match "")))
 
 ;; open parens
-(require-package 'smartparens)
-(smartparens-global-mode t)
+(use-package smartparens
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook 'smartparens-mode)
+  )
 
 ;; open undo-tree
-(require-package 'undo-tree)
-(global-undo-tree-mode)
-(defalias 'ifun/udt 'undo-tree-visualize)
+(use-package undo-tree
+  :ensure t
+  :config
+  (global-undo-tree-mode)
+  (defalias 'ifun/udt 'undo-tree-visualize)
+  )
 
 (defun ifun/indent-whole-buffer()
   "indent whole buffer"
@@ -57,6 +69,5 @@
   )
 
 (global-set-key (kbd "M-\\") 'ifun/indent-region-or-buffer)
-
 
 (provide 'package-editor)

@@ -1,14 +1,13 @@
-(require-package 'monokai-theme)
-(load-theme 'monokai t)
-(require-package 'powerline)
-(powerline-default-theme)
+(use-package monokai-theme
+  :config (load-theme 'monokai t)
+  :ensure t)
+(use-package powerline
+  :config (powerline-default-theme)
+  :ensure t)
 
 (unless (eq system-type 'windows-nt)
   (set-frame-font "Source Code Pro 10"))
-
-(tool-bar-mode 0)
-(menu-bar-mode 0)
-(scroll-bar-mode 0)
-
-(setq inhibit-startup-message t)
+(use-package better-defaults
+  :ensure t)
 (provide 'package-theme)
+;;; package-theme.el ends here

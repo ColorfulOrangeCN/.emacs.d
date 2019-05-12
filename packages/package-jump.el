@@ -1,17 +1,21 @@
 ;; config ace-jump-mode
-(require-package 'avy)
-(global-set-key (kbd "M-g M-g") 'avy-goto-char)
-(require-package 'ace-window)
-(global-set-key (kbd "C-x o") 'ace-window)
+(use-package avy
+  :ensure t
+  :bind (("M-g M-g" . avy-goto-char)
+         ("M-g M-w" . avy-goto-word-0-regexp)))
+(use-package ace-window
+  :ensure t
+  :bind ("C-x o" . ace-winow))
 
 ;; config imenu
 (global-set-key (kbd "M-g M-i") 'imenu)
 
 ;; pop-win
-(require-package 'popwin)
-(popwin-mode t)
-
+(use-package popwin
+  :ensure t
+  :config (popwin-mode t))
 ;;
-(require-package 'find-file-in-project)
-(global-set-key (kbd "M-p") 'find-file-in-project)
+(use-package find-file-in-project
+  :ensure t
+  :bind ("M-p" . find-file-in-project))
 (provide 'package-jump)
