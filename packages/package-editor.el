@@ -69,5 +69,6 @@
   )
 
 (global-set-key (kbd "M-\\") 'ifun/indent-region-or-buffer)
-
+(global-set-key (kbd "C-w") 'backward-kill-word)
+(global-set-key (kbd "M-d") 'kill-region)
 (provide 'package-editor)
