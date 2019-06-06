@@ -17,5 +17,5 @@
 ;;
 (use-package find-file-in-project
   :ensure t
-  :bind ("M-p" . find-file-in-project))
+  :bind ("M-g M-p" . find-file-in-project))
 (provide 'package-jump)

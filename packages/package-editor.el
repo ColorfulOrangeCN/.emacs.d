@@ -5,6 +5,7 @@
 (global-linum-mode t)
 (setq auto-save-default nil)
 (global-auto-revert-mode 1)
+(setq inhibit-splash-screen t)
 
 ;; set indent
 (setq c-default-style "k&r")
