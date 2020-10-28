@@ -6,6 +6,7 @@
 (setq auto-save-default nil)
 (global-auto-revert-mode 1)
 (setq inhibit-splash-screen t)
+(xterm-mouse-mode t)
 
 ;; set indent
 (setq c-default-style "k&r")
