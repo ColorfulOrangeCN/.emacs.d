@@ -4,7 +4,12 @@
   (add-hook 'prog-mode-hook 'company-mode)
   (setq company-idle-delay t)
   )
-(use-package company-c-headers :ensure t)
+
+(use-package company-lsp
+  :ensure t
+  :config
+  (push 'company-lsp company-backends)
+  )
 
 (electric-pair-mode t)
 
