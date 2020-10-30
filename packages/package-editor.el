@@ -8,6 +8,14 @@
 (setq inhibit-splash-screen t)
 (xterm-mouse-mode t)
 
+(add-hook 'prog-mode-hook 'hs-minor-mode)
+(add-hook 'prog-mode-hook
+	  (lambda ()
+		(local-set-key (kbd "M-g M-h") 'hs-hide-block)))
+(add-hook 'prog-mode-hook
+	  (lambda ()
+		(local-set-key (kbd "M-g M-s") 'hs-show-block)))
+
 ;; set indent
 (setq c-default-style "k&r")
 (setq c-basic-offset 4)

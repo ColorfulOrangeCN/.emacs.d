@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: defineLetMax
+# key: defletmin
+# --
+
+template<typename T>
+inline T& letmin(T& l, const T& r)
+{
+    return (l > r ? l = r : l);
+}
+$0

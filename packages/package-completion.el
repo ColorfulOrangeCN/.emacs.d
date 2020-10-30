@@ -22,6 +22,7 @@
 (use-package yasnippet
   :ensure t
   :config
+  (add-hook 'prog-mode-hook 'yas-reload-all)
   (add-hook 'prog-mode-hook 'yas-minor-mode))
 
 (use-package yasnippet-snippets :ensure t)

@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: deftree
+# key: deftree
+# --
+
+struct Edge
+{
+    int v, nxt;
+} edges[maxn * 2];
+int head[maxn] = {0}, newp = 0;
+inline void addEdge(int u, int v)
+{
+    edges[++newp].v = v;
+    edges[newp].nxt = head[u];
+    head[u] = new;
+}
