@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: autoinc
+# key: autoinc
+# --
+
+#include <bits/stdc++.h>

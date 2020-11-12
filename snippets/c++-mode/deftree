@@ -12,5 +12,5 @@ inline void addEdge(int u, int v)
 {
     edges[++newp].v = v;
     edges[newp].nxt = head[u];
-    head[u] = new;
+    head[u] = newp;
 }

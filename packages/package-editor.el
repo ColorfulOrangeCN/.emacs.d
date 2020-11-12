@@ -11,10 +11,10 @@
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 (add-hook 'prog-mode-hook
 	  (lambda ()
-		(local-set-key (kbd "M-g M-h") 'hs-hide-block)))
+            (local-set-key (kbd "M-g M-h") 'hs-hide-block)))
 (add-hook 'prog-mode-hook
 	  (lambda ()
-		(local-set-key (kbd "M-g M-s") 'hs-show-block)))
+            (local-set-key (kbd "M-g M-s") 'hs-show-block)))
 
 ;; set indent
 (setq c-default-style "k&r")
@@ -59,6 +59,14 @@
   :config
   (global-undo-tree-mode)
   (defalias 'ifun/udt 'undo-tree-visualize)
+  )
+
+(use-package smart-hungry-delete
+  :ensure t
+  :bind (("<backspace>" . smart-hungry-delete-backward-char)
+         ("C-d" . smart-hungry-delete-forward-char))
+  :defer nil ;; dont defer so we can add our functions to hooks
+  :config (smart-hungry-delete-add-default-hooks)
   )
 
 (defun ifun/indent-whole-buffer()
