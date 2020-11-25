@@ -2,7 +2,8 @@
   :ensure t
   :config
   (add-hook 'prog-mode-hook 'company-mode)
-  (setq company-idle-delay t)
+  (setq company-idle-delay 0.01)
+  (setq company-minimum-prefix-length 2)
   )
 
 (use-package company-lsp

@@ -17,8 +17,10 @@
             (local-set-key (kbd "M-g M-s") 'hs-show-block)))
 
 ;; set indent
-(setq c-default-style "k&r")
-(setq c-basic-offset 4)
+(c-add-style "oicode"
+	     '(
+	       (c-basic-offset . 2)))
+(setq c-default-style "oicode")
 
 ;; config highlight
 (use-package highlight-parentheses
@@ -86,6 +88,11 @@
     )
   )
 
+(defun toggle-comment-on-line ()
+  "comment or uncomment current line"
+  (interactive)
+  (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
+(global-set-key (kbd "M-g M-/") 'toggle-comment-on-line)
 (global-set-key (kbd "M-\\") 'ifun/indent-region-or-buffer)
 (global-set-key (kbd "C-w") 'backward-kill-word)
 (global-set-key (kbd "M-d") 'kill-region)
