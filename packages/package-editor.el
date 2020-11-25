@@ -21,6 +21,10 @@
 	     '(
 	       (c-basic-offset . 2)))
 (setq c-default-style "oicode")
+(use-package clang-format+
+  :ensure t
+  :config
+  (add-hook 'c-mode-common-hook 'clang-format+-mode))
 
 ;; config highlight
 (use-package highlight-parentheses
