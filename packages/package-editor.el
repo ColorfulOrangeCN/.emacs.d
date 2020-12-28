@@ -6,7 +6,13 @@
 (setq auto-save-default nil)
 (global-auto-revert-mode 1)
 (setq inhibit-splash-screen t)
-(xterm-mouse-mode t)
+
+(unless (display-graphic-p)
+  ;; Use Terminal
+  (xterm-mouse-mode 1)
+  (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
+  (global-set-key (kbd "<mouse-5>") 'scroll-up-line)
+  )
 
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 (add-hook 'prog-mode-hook
@@ -17,10 +23,9 @@
             (local-set-key (kbd "M-g M-s") 'hs-show-block)))
 
 ;; set indent
-(c-add-style "oicode"
-	     '(
-	       (c-basic-offset . 2)))
-(setq c-default-style "oicode")
+(c-add-style "oicode" '((c-basic-offset . 2)))
+(add-hook 'c-mode-common-hook (lambda () (c-set-style "oicode")))
+
 (use-package clang-format+
   :ensure t
   :config
