@@ -6,11 +6,7 @@
   (setq company-minimum-prefix-length 2)
   )
 
-(use-package company-lsp
-  :ensure t
-  :config
-  (push 'company-lsp company-backends)
-  )
+
 
 (electric-pair-mode t)
 

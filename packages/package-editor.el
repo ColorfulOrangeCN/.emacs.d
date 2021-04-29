@@ -58,11 +58,7 @@
   (while (search-forward "\r" nil t) (replace-match "")))
 
 ;; open parens
-(use-package smartparens
-  :ensure t
-  :config
-  (add-hook 'prog-mode-hook 'smartparens-mode)
-  )
+(electric-pair-mode t)
 
 ;; open undo-tree
 (use-package undo-tree
